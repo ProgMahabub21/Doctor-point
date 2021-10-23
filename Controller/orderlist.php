@@ -2,9 +2,9 @@
 
 <body>
     <?php
-
+    session_start();
     $orderlist = json_decode(file_get_contents("../Model/orderData.json", true), true);
-    $curr_user = $_COOKIE['UserName'];
+    $curr_user = $_SESSION['UserName'];
     $count = 0;
 
     foreach ($orderlist as $x => $val) {

@@ -2,7 +2,7 @@
 
 <body>
     <?php
-    
+    session_start();
     if (isset($_POST['next'])) {
 
         $email = $_POST['email'];
@@ -19,8 +19,10 @@
         echo $is_validate;
         
         if (!empty($email) && !empty($userRole)) {
-            setcookie("email",$email,time()+86400);
-            setcookie("userRole",$userRole,time()+86400);
+            // setcookie("email",$email,time()+86400);
+            // setcookie("userRole",$userRole,time()+86400);
+            $_SESSION["email"]= $email;
+            $_SESSION["userRole"]=$userRole;
 
             if ($userRole == 'patients')
                 header("location:../View/patients-form.html", TRUE, 302);

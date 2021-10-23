@@ -8,11 +8,12 @@
 </head>
 <body>
     <?php require "../Controller/appointment-process.php"?>
+    <?php session_start();?>
     <form action="../View/makePayment.html" style="display: inline-block;"><h1>Appointment Details</h1>
         <fieldset> 
         <legend></legend>
                <label for="pname">Patient's Name</label>
-               <input type="text" name="pname" value="<?php echo $_COOKIE['UserName'] ?>"><br><br>
+               <input type="text" name="pname" value="<?php echo $_SESSION['UserName'] ?>"><br><br>
                <label for="docname">Doctor's Name</label>
                <input type="text" name="docname" value="<?php echo $docname; ?>"><br><br>
                <label for="dept">Department</label>

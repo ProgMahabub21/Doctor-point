@@ -2,6 +2,7 @@
 
 <body style="text-align: left;">
     <?php
+    session_start();
     $doclist = json_decode(file_get_contents("../Model/doctorData.json", true), true);
     if(isset($_POST['submit']))
     {
@@ -18,7 +19,7 @@
     $ispaid = false;
     echo " Appointment booked.Redirecting you to Payment page. Please complete payment for confirmation";
              $existingData = json_decode(file_get_contents("../Model/appointment.json",true));
-             $array = array("Appointment ID"=>$appid,"Patient's Name" => $_COOKIE['UserName'], "Doctor's Name" => $docname, 'Department' => $dept, 'Payment Status' => $ispaid);
+             $array = array("Appointment ID"=>$appid,"Patient's Name" => $_SESSION['UserName'], "Doctor's Name" => $docname, 'Department' => $dept, 'Payment Status' => $ispaid);
              array_push($existingData, $array);
              $fp = fopen('../Model/appointment.json', 'w');
              fwrite($fp, json_encode($existingData, JSON_PRETTY_PRINT));  

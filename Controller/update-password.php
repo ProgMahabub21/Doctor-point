@@ -1,11 +1,12 @@
 <html>
     <body>
     <?php
+    session_start();
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $old_password = $_POST['OldPassword'];
         $new_password = $_POST['Newpassword'];
         $retype_pass = $_POST['Repassword'];
-        $curr_user = $_COOKIE['UserName'];
+        $curr_user = $_SESSION['UserName'];
 
         if (!empty($new_password) && !empty($old_password)) {
             if ($new_password == $retype_pass) {
@@ -29,6 +30,8 @@
                 $fp = fopen('../Model/patientData.json', 'w');
                 fwrite($fp, json_encode($userData, JSON_PRETTY_PRINT));
                 fclose($fp);
+
+                header("refresh:2;url=../View/patient-profile.php");
             }
             else
                 echo "New Password & retyped password doesn't match";

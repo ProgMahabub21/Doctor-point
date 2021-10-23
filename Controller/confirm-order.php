@@ -1,6 +1,7 @@
 <html>
     <body>
         <?php
+            session_start();
             if(isset($_POST['confirm']))
             {
                 $cardname = $_POST['cardowner'];
@@ -10,7 +11,7 @@
                 $orderID = time()*365;
                 $medicineName = $_COOKIE['bname'];
                 $genename = $_COOKIE['gname'];
-                $username = $_COOKIE['UserName'];
+                $username = $_SESSION['UserName'];
                 $quantity = $_COOKIE['amount'];
                 $orderPrice = $_COOKIE['price'];
                 $orderStatus = "Pending";

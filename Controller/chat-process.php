@@ -1,11 +1,12 @@
 <html>
     <body>
         <?php
+        session_start();
         if ($_SERVER["REQUEST_METHOD"] == "POST"){	
                 $docname = $_POST['docname'];
                 $msg= $_POST['msg'];
                 $subject = $_POST['subject'];
-                $patient = $_COOKIE['UserName'];
+                $patient = $_SESSION['UserName'];
 
             }
         $is_validate = true;	

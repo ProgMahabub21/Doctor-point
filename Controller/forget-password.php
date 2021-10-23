@@ -21,7 +21,7 @@
                 fwrite($fp, json_encode($userData, JSON_PRETTY_PRINT));  
                 fclose($fp);
                 
-
+                header("refresh:2;url=../View/login-form.html");
             }
             else
                 if(empty($email))

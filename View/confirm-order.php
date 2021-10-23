@@ -11,13 +11,13 @@
         <fieldset>
             <legend>Order Details</legend>
             <label for="medname">Medicine Name:</label>
-            <input type="text" name="medname" id="medname" value="<?php echo $_COOKIE['bname'] ?>"><br><br>
+            <input type="text" name="medname" id="medname" value="<?php echo $_COOKIE['bname'] ?>" readonly><br><br>
             <label for="medname">Generics Name:</label>
-            <input type="text" name="genericname" id="genericname" value="<?php echo $_COOKIE['gname'] ?>"><br><br>
+            <input type="text" name="genericname" id="genericname" value="<?php echo $_COOKIE['gname'] ?>" readonly><br><br>
             <label for="qtny">Quantity:</label>
-            <input type="text" name="qtn" id="qtn" value="<?php echo $_COOKIE['amount']?>"><br><br>
+            <input type="text" name="qtn" id="qtn" value="<?php echo $_COOKIE['amount']?>" readonly><br><br>
             <label for="price">Total Price:</label>
-            <input type="text" name="price" id="price" value="<?php echo $_COOKIE['price']?>"><br><br>
+            <input type="text" name="price" id="price" value="<?php echo $_COOKIE['price']?>" readonly><br><br>
 
 
 

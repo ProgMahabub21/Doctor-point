@@ -2,6 +2,7 @@
 <body>
 
     <?php
+    session_start();
     if (isset($_POST['patient'])) {
         $patient_fname = $_POST['fname'];
         $patient_lname = $_POST['lname'];
@@ -33,11 +34,14 @@
         } else {
             echo "registration successful ";
             $existingData = json_decode(file_get_contents("../Model/patientData.json",true));
-            $array = array('First Name' => $patient_fname, 'Last Name' => $patient_lname, 'Age(yrs)' => $patient_age, 'Gender' => $patient_gender, 'address' => $patient_address, 'phone' => $patient_phone,'email'=> $_COOKIE["email"] ,'password' => $patient_password, 'User Role' => $_COOKIE["userRole"]);
+            $array = array('First Name' => $patient_fname, 'Last Name' => $patient_lname, 'Age(yrs)' => $patient_age, 'Gender' => $patient_gender,'Blood Group'=> $patient_bloodGroup, 'address' => $patient_address, 'phone' => $patient_phone,'email'=> $_SESSION["email"] ,'password' => $patient_password, 'User Role' => $_SESSION["userRole"]);
             array_push($existingData, $array);
             $fp = fopen('../Model/patientData.json', 'w');
             fwrite($fp, json_encode($existingData, JSON_PRETTY_PRINT));  
             fclose($fp);
+
+            session_destroy();
+            header("refresh:3;url=../View/first-form.html");
         }
     }
     ?>

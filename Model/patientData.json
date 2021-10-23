@@ -2,10 +2,11 @@
     {
         "First Name": "Md",
         "Last Name": "Kabir",
-        "Age(yrs)": "22",
+        "Age(yrs)": "23",
         "Gender": "male",
-        "address": "House 217, road 32",
-        "phone": "0177701459",
+        "Blood Group": "O-",
+        "address": "880 Cambridge Drive",
+        "phone": "6346946465",
         "email": "abcx@gmail.com",
         "password": "ggabc",
         "User Role": "patients"
@@ -13,10 +14,11 @@
     {
         "First Name": "Mr ",
         "Last Name": "Kohli",
-        "Age(yrs)": "29",
+        "Age(yrs)": "23",
         "Gender": "male",
-        "address": "1680 Berkley Street",
-        "phone": "964981566",
+        "Blood Group": "O-",
+        "address": "880 Cambridge Drive",
+        "phone": "6346946465",
         "email": "a@gmail.com",
         "password": "1234",
         "User Role": "patients"
@@ -24,12 +26,37 @@
     {
         "First Name": "Arian ",
         "Last Name": "Zayn",
-        "Age(yrs)": "29",
+        "Age(yrs)": "23",
         "Gender": "male",
-        "address": "811 Crowfield Road",
-        "phone": "0123699999",
+        "Blood Group": "O-",
+        "address": "880 Cambridge Drive",
+        "phone": "6346946465",
         "email": "azayn238@gmail.com",
         "password": "zayn0123",
+        "User Role": "patients"
+    },
+    {
+        "First Name": "Md",
+        "Last Name": "Rafi",
+        "Age(yrs)": "23",
+        "Gender": "male",
+        "Blood Group": "O-",
+        "address": "880 Cambridge Drive",
+        "phone": "6346946465",
+        "email": "imahbub.1999@gmail.com",
+        "password": "admin2020",
+        "User Role": "patients"
+    },
+    {
+        "First Name": "Md",
+        "Last Name": "Islam",
+        "Age(yrs)": "23",
+        "Gender": "male",
+        "Blood Group": "O-",
+        "address": "880 Cambridge Drive",
+        "phone": "6346946465",
+        "email": "google@mahabub.com",
+        "password": "4444",
         "User Role": "patients"
     }
 ]

@@ -2,6 +2,7 @@
     <body>
     <?php 
 		
+		session_start();
 		if ($_SERVER["REQUEST_METHOD"] == "POST"){	
 			$email = $_POST['email'];
 			$password = $_POST['password'];  
@@ -31,9 +32,11 @@
 					
 						$loggedin = true;
 						$useremail = $val['email'];
-						setcookie("Usermail",$useremail,time()+86400,"/"); 
+						//setcookie("Usermail",$useremail,time()+86400,"/"); 
 						$username = $val["Last Name"].", ".$val["First Name"];
-						setcookie("UserName",$username,time()+86400,"/");
+					//	setcookie("UserName",$username,time()+86400,"/");
+						$_SESSION["UserName"]=$username;
+						$_SESSION["Usermail"]=$useremail;
 						break;
 					}
 				  }

@@ -2,9 +2,9 @@
     <body>
 
         <?php
-            
+            session_start();
             $prescriptionData = json_decode(file_get_contents("../Model/prescriptionData.json",true),true);
-            $curr_mail =$_COOKIE['Usermail'];
+            $curr_mail =$_SESSION['Usermail'];
             $count=0;
 
             foreach($prescriptionData as $x => $val) {
