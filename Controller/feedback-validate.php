@@ -2,7 +2,7 @@
     <body>
         
         <?php
-        $userData = json_decode(file_get_contents("../Model/doctorData.json", true),true);    
+      
 		if ($_SERVER["REQUEST_METHOD"] == "POST"){	
 			$docname = $_POST['docname'];
 			$msg= $_POST['message'];  
@@ -11,10 +11,10 @@
         if(empty($docname) || empty($msg))
         {
             if(empty($docname))
-                echo "Please select a doctor name";
+                echo "*Please select a doctor name";
             if(empty($msg)){
                     echo "<br>";
-                    echo "Please write your message";
+                    echo "*Please write your message";
                 }        
         }
         else{

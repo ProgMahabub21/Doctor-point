@@ -10,7 +10,7 @@
 
 <body>
   <form action="../Controller/feedback-validate.php" style="display: inline-block" method="post">
-  <?php include "../Controller/feedback-validate.php";?>
+  <?php include "../Controller/doclist.php";?>
     <fieldset>
       <legend>
         <h4>Patient's Feedback Form</h4>

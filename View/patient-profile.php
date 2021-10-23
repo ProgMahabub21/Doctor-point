@@ -11,7 +11,7 @@
     <table>
         <tr>
             <td><form action="submitFeedback.php"><input type="submit" value="Feedback"></form></td>
-            <td><form action="chatWithDoc.html"><input type="submit" value="Chat Doc"></form></td>
+            <td><form action="chatWithDoc.php"><input type="submit" value="Chat Doc"></form></td>
             <td><form action="make-appointment.php"><input type="submit" value="Make Appoinment"></form></td>
             <td><form action="viewPrescription.php"><input type="submit" value="Prescription"></form></td>
             <td><form action="medicine-shop.php"><input type="submit" value="Purchase Medicine"></form></td>
