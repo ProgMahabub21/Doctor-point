@@ -37,6 +37,12 @@
 					//	setcookie("UserName",$username,time()+86400,"/");
 						$_SESSION["UserName"]=$username;
 						$_SESSION["Usermail"]=$useremail;
+
+						setcookie("bname","",time()+86400,"/");
+        				setcookie("gname","",time()+86400,"/");
+        				setcookie("compname","",time()+86400,"/");
+        				setcookie("type","",time()+86400,"/");
+        				setcookie("price","",time()+86400,"/");
 						break;
 					}
 				  }

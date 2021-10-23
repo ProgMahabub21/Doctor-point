@@ -53,5 +53,16 @@
         "Payment Status": true,
         "Order Time": "2021-10-23 07:20:22pm",
         "Order Status": "Pending"
+    },
+    {
+        "Order ID": 596781699940,
+        "Customer Name": "Islam, Md",
+        "Medicine Name": "Moxaclav 625",
+        "Generics Name": "Amoxicillin 500mg + Clavulanic Acid 125mg",
+        "Quantity": "10",
+        "Price": "310",
+        "Payment Status": true,
+        "Order Time": "2021-10-23 09:45:56pm",
+        "Order Status": "Pending"
     }
 ]
