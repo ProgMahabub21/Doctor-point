@@ -1,0 +1,61 @@
+[
+    {
+        "brandName": "Moxaclav 625",
+        "genericsName": "Amoxicillin 500mg + Clavulanic Acid 125mg",
+        "manufactureCompany": "Square Pharmacuticals",
+        "medicinetype":"Tablet",
+        "price":"31"
+
+    },
+    {
+        "brandName": "Sergel 20",
+        "genericsName": "Esomeprazole 20mg",
+        "manufactureCompany": "Healthcare Pharmacuticals",
+        "medicinetype":"Capsule",
+        "price":"6.50"
+
+    },
+    {
+        
+        "brandName": "Napa",
+        "genericsName": "Paracetamol 500mg",
+        "manufactureCompany": "Beximco Pharmacuticals",
+        "medicinetype":"Tablet",
+        "price":"1"
+    },
+    {
+        "brandName": "Amdocal Plus 50",
+        "genericsName": "Amlodipine 5mg +Atenolol 50mg",
+        "manufactureCompany": "Beximco Pharmacuticals",
+        "medicinetype":"Tablet",
+        "price":"5"
+    },
+    {
+        "brandName": "Rynex 0.05% 10 ml",
+        "genericsName": "Oxymetazoline Hydrochloride (Nasal) 0.05%",
+        "manufactureCompany": "Incepta Pharmacuticals",
+        "medicinetype":"Nasal Drop",
+        "price":"45"
+    },
+    {
+        "brandName": "Amodis 400",
+        "genericsName": "Metronidazole 400mg",
+        "manufactureCompany": "Square Pharmacuticals",
+        "medicinetype":"Tablet",
+        "price":"2"
+    },
+    {
+        "brandName": "Monas 10",
+        "genericsName": "Montelukast Sodium 10mg",
+        "manufactureCompany": "The ACME Laboratories Ltd.",
+        "medicinetype":"Tablet",
+        "price":"16"
+    },
+    {
+        "brandName": "Ebatin 10",
+        "genericsName": "Ebastine 10mg",
+        "manufactureCompany": "ACI limited",
+        "medicinetype":"Tablet",
+        "price":"8"
+    }
+]

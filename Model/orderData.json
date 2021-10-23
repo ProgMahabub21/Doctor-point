@@ -1,0 +1,46 @@
+[
+    {
+        "Order ID": 596747176780,
+        "Customer Name": "Kabir, Md",
+        "Medicine Name": "Moxaclav 625",
+        "Generics Name": "Amoxicillin 500mg + Clavulanic Acid 125mg",
+        "Quantity": "12",
+        "Price": "372",
+        "Payment Status": true,
+        "Order Time": "2021-10-22 07:29:32pm",
+        "Order Status": "Pending"
+    },
+    {
+        "Order ID": 596747253430,
+        "Customer Name": "Zayn, Arian ",
+        "Medicine Name": "Amdocal Plus 50",
+        "Generics Name": "Amlodipine 5mg +Atenolol 50mg",
+        "Quantity": "20",
+        "Price": "100",
+        "Payment Status": true,
+        "Order Time": "2021-10-22 07:33:02pm",
+        "Order Status": "Delivered"
+    },
+    {
+        "Order ID": 596747422425,
+        "Customer Name": "Zayn, Arian ",
+        "Medicine Name": "Sergel 20",
+        "Generics Name": "Esomeprazole 20mg",
+        "Quantity": "28",
+        "Price": "182",
+        "Payment Status": true,
+        "Order Time": "2021-10-22 07:40:45pm",
+        "Order Status": "On The Way"
+    },
+    {
+        "Order ID": 596747694715,
+        "Customer Name": "Zayn, Arian ",
+        "Medicine Name": "Monas 10",
+        "Generics Name": "Montelukast Sodium 10mg",
+        "Quantity": "30",
+        "Price": "480",
+        "Payment Status": true,
+        "Order Time": "2021-10-22 07:53:11pm",
+        "Order Status": "Pending"
+    }
+]
