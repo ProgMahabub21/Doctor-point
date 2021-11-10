@@ -64,5 +64,16 @@
         "Payment Status": true,
         "Order Time": "2021-10-23 09:45:56pm",
         "Order Status": "Pending"
+    },
+    {
+        "Order ID": 596794357410,
+        "Customer Name": "Kabir, Md",
+        "Medicine Name": "Sergel 20",
+        "Generics Name": "Esomeprazole 20mg",
+        "Quantity": "20",
+        "Price": "130",
+        "Payment Status": true,
+        "Order Time": "2021-10-24 07:23:54am",
+        "Order Status": "Delivered"
     }
 ]

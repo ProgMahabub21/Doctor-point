@@ -41,7 +41,7 @@
             fclose($fp);
 
             session_destroy();
-            header("refresh:3;url=../View/first-form.html");
+            header("refresh:3;url=../View/first-form.php");
         }
     }
     ?>

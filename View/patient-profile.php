@@ -7,7 +7,7 @@
     <title>Patient's Account</title>
 </head>
 <body style="text-align: center;">
-
+   
     <p style="align:left"><?php session_start(); echo "Hello! ". $_SESSION['UserName'];?></p><p style="display: inline-block; ">Welcome Back! . Check Which doctors are available!!</p><br>
     <table>
         <tr>
@@ -22,6 +22,8 @@
         </tr>
     </table>
 
+
+    <?php  include "footer.php" ?>
 
 </body>
 </html>
