@@ -35,19 +35,6 @@
         "password": "zayn0123",
         "User Role": "patients"
     },
-   
-    {
-        "First Name": "Md",
-        "Last Name": "Islam",
-        "Age(yrs)": "22",
-        "Gender": "male",
-        "Blood Group": "Bpos",
-        "address": "1680 Berkley Street",
-        "phone": "01789156864",
-        "email": "google@mahabub.com",
-        "password": "4444",
-        "User Role": "patients"
-    },
     {
         "First Name": "Singthis",
         "Last Name": "Chowdhury",
@@ -70,6 +57,18 @@
         "phone": "01789156864",
         "email": "abcd@gmail.com",
         "password": "abcd",
+        "User Role": "patients"
+    },
+    {
+        "First Name": "Md",
+        "Last Name": "Islam",
+        "Age(yrs)": "23",
+        "Gender": "male",
+        "Blood Group": "ABpos",
+        "address": "House 217, road 32",
+        "phone": "01789171191",
+        "email": "google@mahabub.com",
+        "password": "4444",
         "User Role": "patients"
     }
 ]
