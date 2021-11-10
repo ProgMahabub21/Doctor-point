@@ -45,9 +45,13 @@
                 if ($result) {
                     echo "registration successful ";
                     session_destroy();
+                    //close connection
+                    mysqli_close($conn);
                     header("refresh:3;url=../View/login-form.html");
                 } else {
                     echo "error";
+                    //close connection
+                    mysqli_close($conn);
                     header("refresh:3;url=../View/first-form.html");
                 }
 
@@ -56,6 +60,7 @@
             {
                 echo "connection failed";
             }
+    
             // $existingData = json_decode(file_get_contents("../Model/patientData.json",true));
             // $array = array('First Name' => $patient_fname, 'Last Name' => $patient_lname, 'Age(yrs)' => $patient_age, 'Gender' => $patient_gender,'Blood Group'=> $patient_bloodGroup, 'address' => $patient_address, 'phone' => $patient_phone,'email'=> $_SESSION["email"] ,'password' => $patient_password, 'User Role' => $_SESSION["userRole"]);
             // array_push($existingData, $array);
