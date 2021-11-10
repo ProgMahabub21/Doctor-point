@@ -38,7 +38,7 @@
             {
                 //sql insert query
                 $sql = "INSERT INTO patient_data values('$patient_fname','$patient_lname','$patient_age','$patient_gender','$patient_address',
-                '$patient_phone','$patient_email','$patient_password','$patient_bloodGroup')";
+                '$patient_phone','$patient_email','$patient_password','$patient_bloodGroup'";
 
                 //check successful insert 
                 $result = mysqli_query($conn, $sql);
