@@ -9,8 +9,8 @@
 </head>
 
 <body>
+  <?php require "../Controller/doclist.php";?>
   <form action="../Controller/feedback-validate.php" style="display: inline-block" method="post">
-  <?php include "../Controller/doclist.php";?>
     <fieldset>
       <legend>
         <h4>Patient's Feedback Form</h4>
@@ -18,10 +18,21 @@
       <label for="name">Doctor's Name</label><br />
       <select name="docname" id="docname">
         <?php
-        foreach ($userData as $key => $value) {
-         $docname = $userData[$key]["First Name"]." ". $userData[$key]["Last Name"]." (". $userData[$key]["department"].")";
-          
-         echo "<option value='.$docname.'>" . $docname. "</option>";
+        foreach ($array as $key) {
+        //  $docname = $userData[$key]["First Name"]." ". $userData[$key]["Last Name"]." (". $userData[$key]["department"].")";
+          $doctorname = $key['docname'];
+         echo "<option value='$doctorname'>"  .$doctorname. "</option>";
+        }
+        ?>
+      </select><br><br>
+      <label for="dept">Doctor's Department</label><br />
+      <select name="dept" id="dept">
+      <?php
+        foreach ($array as $key) {
+        //  $docname = $userData[$key]["First Name"]." ". $userData[$key]["Last Name"]." (". $userData[$key]["department"].")";
+          //$doctorname = $key['docname'];
+          $dept = $key['dept'];
+         echo "<option value='$dept'>"  .$dept. "</option>";
         }
         ?>
       </select><br><br>
@@ -29,7 +40,7 @@
       <textarea name="message" id="" cols="30" rows="10"></textarea>
       <br />
     </fieldset>
-    <br />
+      <br />
     <input type="submit" value="Submit" />
   </form>
 </body>
