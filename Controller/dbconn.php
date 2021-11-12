@@ -2,19 +2,15 @@
     <body>
         
         <?php
-            $servername = "localhost";
-            $username = "root";
-            $password = "admin2020";
-            $dbname = "doctor_point";
-        
-            // Create connection
-            $conn = new mysqli($servername, $username, $password, $dbname);
-        
-            // Check connection
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
+            $server = "localhost";
+            $user = "root";
+            $pass = "admin2020";
+            $db = "doctor_point";
+            
+            $conn = mysqli_connect($server, $user, $pass, $db);
+            if (!$conn) {
+                die("Connection failed: " . mysqli_connect_error());
             }
-            //echo "Connected successfully";
         ?>
     </body>
 </html>
