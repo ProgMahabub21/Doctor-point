@@ -2,21 +2,37 @@
     <body>
 
         <?php
+            include 'dbconn.php';
             session_start();
-            $prescriptionData = json_decode(file_get_contents("../Model/prescriptionData.json",true),true);
+            
+            // $prescriptionData = json_decode(file_get_contents("../Model/prescriptionData.json",true),true);
             $curr_mail =$_SESSION['Usermail'];
             $count=0;
 
-            foreach($prescriptionData as $x => $val) {
-               // echo "<hr>";
-               if($val["Patient's email"] == $curr_mail ){ 
-                   $issuedDate = $val["Prescribing Date"]." ". $val["Prescribing Time"];
-                   $array[$count] =  array("Prescription ID:"=>$prescriptionData[$x]["ID"],"Doctor's Name:" => $prescriptionData[$x]["Doctor's Name"]," Diagnosis:"=> $prescriptionData[$x]["Diagnosis"]," Instruction:"=> $prescriptionData[$x]["Instruction"]," Issue Time:" => $issuedDate );
-                //    echo "Doctor's Name: ".$prescriptionData[$x]["Doctor's Name"]." Diagnosis:".$prescriptionData[$x]["Diagnosis"].
-                //    " Instruction:". $prescriptionData[$x]["Instruction"]." Issue Date-Time:". $issuedDate;
-                        $count++;
+            //selecting the prescription history of the user
+            $sql = "SELECT * FROM prescription_data WHERE PatientEmail=?";
+
+            if($stmt = mysqli_prepare($conn, $sql)){
+                mysqli_stmt_bind_param($stmt, "s", $curr_mail);
+                mysqli_stmt_execute($stmt);
+                $result = mysqli_stmt_get_result($stmt);
+                while($row = mysqli_fetch_assoc($result)){
+           
+                    $prescriptionData[$count]['PrescriptionID'] = $row['PrescriptionID'];
+                  //  $prescriptionData[$count]['PatientEmail'] = $row['PatientEmail'];
+                    $prescriptionData[$count]['DoctorName'] = $row['DoctorName'];
+                    $prescriptionData[$count]['Diagnosis'] = $row['Diagnosis'];
+                    $prescriptionData[$count]['Prescription'] = $row['Instruction'];
+                    $prescriptionData[$count]['Date'] = $row['IssueTime'];
+
+                    $count++;
                 }
-             }
+            }
+            mysqli_stmt_close($stmt);
+
+            // close connection
+            mysqli_close($conn);
+
            
             
         ?>

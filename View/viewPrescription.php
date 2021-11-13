@@ -18,7 +18,7 @@
                 for($i=0;$i<=$count-1;$i++)
                 {
                     echo"<tr>";
-                    foreach($array[$i] as $key=>$val)
+                    foreach($prescriptionData[$i] as $key=>$val)
                     {
                         echo "<td>".$val."</td>";
                     }
