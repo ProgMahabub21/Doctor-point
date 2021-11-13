@@ -15,11 +15,11 @@
                  echo "<hr>";
                 echo "<table border='1'>";
                 echo "<tr><th>Order ID</th><th>Medicine Name</th><th>Generics Name</th><th>Quantity</th><th>Price(TK)</th>
-                <th>Order Status</th><th>Order Placement Time</th></tr>";
+                <th>Payment Status</th><th>Order Placement Time</th><th>Order Status</th></tr>";
                 for($i=0;$i<=$count-1;$i++)
                 {
                     echo"<tr>";
-                    foreach($array[$i] as $key=>$val)
+                    foreach($orderData[$i] as $key=>$val)
                     {
                         echo "<td>".$val."</td>";
                     }
