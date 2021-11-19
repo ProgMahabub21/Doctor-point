@@ -4,47 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../View/css/style.css">
+    <link rel="stylesheet" href="../View/css/regform.css">
     <title>Patient Registration Form</title>
 </head>
 <body>
-    <!-- <form action="../Controller/regform-validate.php" style="display:inline-block" method="POST">
-        <fieldset>
-            <legend>Registration form</legend>
-            <label for="fname">First Name:</label>
-            <input type="text" name="fname" id="fname"><br><br>
-            <label for="lname">Last Name:</label>
-            <input type="text" name="lname" id="lname"><br><br>
-            <label for="age">Age :</label>
-            <input type="text" name="age" id="age"><br><br>
-            <label for="age">Gender :</label>
-            <select name="gender" id="gender">
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-            </select><br><br>
-            <label for="address">Present Address:</label>
-            <input type="text" name="address" id="address"><br><br>
-            <label for="bgs">Blood Group:</label>
-            <select name="bgs" id="bgs">
-            <option value="none">None</option>
-            <option value="Apos">A+</option>
-            <option value="Aneg">A-</option>
-            <option value="Bpos">B+</option>
-            <option value="Bneg">B-</option>
-            <option value="ABpos">AB+</option>
-            <option value="ABneg">AB-</option>
-            <option value="Opos">O+</option>
-            <option value="Oneg">O-</option>
-            </select><br><br>
-            <label for="contact">Phone:</label>
-            <input type="number" name="contact" id="contact"><br><br>
-            <label for="password">Password:</label>
-            <input type="password" name="password" id="password"><br><br>
-        </fieldset><br>
-        <input type="submit" value="Confirm" name="patient">
-    </form> -->
-  <?php //include 'header.html'; ?>
-    <form class="signup-form" action="../Controller/regform-validate.php" method="post">
+  <?php include 'header.html'; ?>
+
+    <form class="signup-form" action="../Controller/regform-validate.php"  method="post">
 
         <!-- form header -->
         <div class="form-header">
@@ -141,8 +107,7 @@
           <button type="submit" class="btn" name="patient">Confirm</button>
         </div>
   
-      </form>
-  
+    </form>
       <!-- Script for range input label -->
       <script>
         var rangeLabel = document.getElementById("range-label");
@@ -153,7 +118,7 @@
         }
       </script>
 
-  <?php //include 'footer.php'; ?>
+  <?php include 'footer.php'; ?>
   
   
 </body>

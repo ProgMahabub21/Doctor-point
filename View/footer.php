@@ -117,10 +117,10 @@
             </ul>
         </section>
 
-        <section class="ft-legal">
-            <ul class="ft-legal-list">
-                <li><a href="">Privacy Policy</a></li>
-                <li><a href="">Terms of Use</a></li>
+        <section class="ft-legal" style="justify-content: space-between; ">
+            <ul class="ft-legal-list" >
+                <li><div><p style="text-align: left;">Privacy Policy</p></div></li>
+                <li>Terms of Use</li>
                 <li>Copyright ©<?php echo date('Y')?>. All Rights Reserved.Designed By ABC IT Solution</li>
             </ul>
         </section>
