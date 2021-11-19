@@ -33,8 +33,8 @@
             // values($patient_age,$patient_address,$patient_phone,$patient_gender,$patient_bloodGroup) WHERE Email = $curr_user";
            // echo $curr_user;
            //echo $patient_bloodGroup."++".$patient_age."++". $patient_gender."++". $patient_phone;
-            $sql = "UPDATE patient_data SET Age='$patient_age',Present_Address='$patient_address',Phone='$patient_phone',Gender='$patient_gender'
-             WHERE Email= '$curr_user'";
+            $sql = "UPDATE patient_data SET Age='$patient_age',Present_Address='$patient_address',Phone='$patient_phone',Gender='$patient_gender',
+            BloodGroup='$patient_bloodGroup' WHERE Email= '$curr_user'";
             $result = mysqli_query($conn, $sql);
             if($result > 0)
             {

@@ -26,7 +26,7 @@
         else{
             $fid = time()*5;
             //sql to insert data into database with prepared statement
-            $sql = "INSERT INTO feedback_record (Feedback_ID,Patient_Email,Doctor_Name,Department,Message) VALUES (?,?,?,?,?)";
+            $sql = "INSERT INTO feedback_record (FeedbackID,PatientEmail,DoctorName,Department,Message) VALUES (?,?,?,?,?)";
 
             if($stmt = mysqli_prepare($conn, $sql)){
                 // Bind variables to the prepared statement as parameters

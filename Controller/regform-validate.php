@@ -3,7 +3,7 @@
 
     <?php
     session_start();
-    include 'dbconn.php';
+    require 'dbconn.php';
     if (isset($_POST['patient'])) {
         $patient_fname = $_POST['fname'];
         $patient_lname = $_POST['lname'];
@@ -13,7 +13,11 @@
         $patient_phone = $_POST['contact'];
         $patient_password = $_POST['password'];
         $patient_gender = $_POST['gender'];
-        $patient_email = $_SESSION['email'];
+      //   $patient_email = $_SESSION['email'];
+        $patient_email = $_POST['email'];
+
+
+        echo $patient_fname. "// ". $patient_lname. " //" .$patient_age." //". $patient_address ." //". $patient_bloodGroup." //". $patient_phone." //". $patient_password." //". $patient_gender."//".$patient_email; 
 
         if (
             empty($patient_fname) || empty($patient_lname) || empty($patient_age) || empty($patient_bloodGroup)
@@ -36,15 +40,27 @@
         } else {
             if($conn)
             {
-                //sql insert query
-                $sql = "INSERT INTO patient_data values('$patient_fname','$patient_lname','$patient_age','$patient_gender','$patient_address',
-                '$patient_phone','$patient_email','$patient_password','$patient_bloodGroup'";
+                //sql insert query with prepare statement with bind params
+                $sql = "INSERT INTO patient_data(First_Name,Last_Name,Age,Gender,Present_Address,Phone,Email,password,BloodGroup) 
+                values(?,?,?,?,?,?,?,?,?)";
+
+                if($stmt = mysqli_prepare($conn, $sql)){
+                    mysqli_stmt_bind_param($stmt, "ssissssss", $patient_fname,$patient_lname,$patient_age,$patient_gender,$patient_address,
+                    $patient_phone,$patient_email,$patient_password,$patient_bloodGroup);
+
+                }
+
+                // $sql = "INSERT INTO patient_data values('$patient_fname','$patient_lname','$patient_age','$patient_gender','$patient_address',
+                // '$patient_phone','$patient_email','$patient_password','$patient_bloodGroup')";
+                // $sql = "INSERT INTO patient_data values('$patient_fname','$patient_lname','$patient_age','$patient_gender','$patient_address',
+                // '$patient_phone','$patient_email','$patient_password','$patient_bloodGroup'";
 
                 //check successful insert 
-                $result = mysqli_query($conn, $sql);
-                if ($result) {
+                //$result = mysqli_query($conn, $sql);
+                if(mysqli_stmt_execute($stmt)){
                     echo "registration successful ";
                     session_destroy();
+                    mysqli_stmt_close($stmt);
                     //close connection
                     mysqli_close($conn);
                     header("refresh:3;url=../View/login-form.html");
@@ -52,7 +68,7 @@
                     echo "error";
                     //close connection
                     mysqli_close($conn);
-                    header("refresh:3;url=../View/first-form.html");
+                    header("refresh:10;url=../View/first-form.html");
                 }
 
             }

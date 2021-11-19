@@ -33,7 +33,7 @@
             $address = $row["Present_Address"];
             $phone = $row["Phone"];
             $email = $row["Email"];
-            $bgs = $row["Blood group"];
+            $bgs = $row["BloodGroup"];
         
     }
 
