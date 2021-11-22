@@ -5,11 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient's Account</title>
+   <link rel="stylesheet" href="../View/css/pprofile.css">
 </head>
-<body style="text-align: center;">
+<body style="text-align: center; " >
    
-    <p style="align:left"><?php session_start(); echo "Hello! ". $_SESSION['UserName'];?></p><p style="display: inline-block; ">Welcome Back! . Check Which doctors are available!!</p><br>
-    <table>
+    <!-- <p style="align:left"><?php //session_start(); echo "Hello! ". $_SESSION['UserName'];?></p><p style="display: inline-block; ">Welcome Back! . Check Which doctors are available!!</p><br> -->
+    <?php include "header.html"; ?>
+    <?php include "navbar.php"; ?>
+
+    <!-- <table>
         <tr>
             <td><form action="submitFeedback.php"><input type="submit" value="Feedback"></form></td>
             <td><form action="chatWithDoc.php"><input type="submit" value="Chat Doc"></form></td>
@@ -20,7 +24,7 @@
             <td><form action="viewprofile.php"><input type="submit" value="View Profile"></form> </td>
             <td><form action="../Controller/logout.php" method="post"><input type="submit" value="Log Out" name="logout"></form></td>
         </tr>
-    </table>
+    </table> -->
 
 
     <?php  include "footer.php" ?>

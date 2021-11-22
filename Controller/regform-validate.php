@@ -17,7 +17,7 @@
         $patient_email = $_POST['email'];
 
 
-        echo $patient_fname. "// ". $patient_lname. " //" .$patient_age." //". $patient_address ." //". $patient_bloodGroup." //". $patient_phone." //". $patient_password." //". $patient_gender."//".$patient_email; 
+      //  echo $patient_fname. "// ". $patient_lname. " //" .$patient_age." //". $patient_address ." //". $patient_bloodGroup." //". $patient_phone." //". $patient_password." //". $patient_gender."//".$patient_email; 
 
         if (
             empty($patient_fname) || empty($patient_lname) || empty($patient_age) || empty($patient_bloodGroup)
@@ -38,6 +38,21 @@
             if (empty($patient_gender))
                 echo " password field can't be empty";
         } else {
+            //sql to select query with bind param
+            $sql1= "SELECT Email FROM patient_data";
+
+            $result = mysqli_query($conn, $sql1);
+            $row = mysqli_fetch_assoc($result);
+        
+            if(mysqli_num_rows($result) > 0)
+            {
+               $extemail = $row["Email"];
+               if($extemail == $patient_email)
+               {
+                   echo "Email already exists\n";
+                   echo "<a href='../View/patients-form.php'>Try again</a>";
+               }                
+            }
             if($conn)
             {
                 //sql insert query with prepare statement with bind params

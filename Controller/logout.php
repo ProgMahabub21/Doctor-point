@@ -5,7 +5,7 @@
 
     <?php
     session_start();
-    if (isset($_POST['logout'])) {
+    if (isset($_GET['logout'])) {
         echo "Good Bye, See you soon ".$_SESSION['UserName']."<br>";
         echo "You're logging out. redirecting you to login page in 5 sec";
         // setcookie('UserName', "", time() - 86400);
