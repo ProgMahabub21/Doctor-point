@@ -15,13 +15,13 @@
     />
     <link rel="stylesheet" href="css/login.css" />
   </head>
-  <body background="../View/image/reg-bg.jpg">
+  <body>
   <?php include "header.html" ?>  
   <div class="login-form">
       <form
         action="../Controller/login-form.php"
         method="POST"
-        style="display: inline-block"
+        style="display: inline-block;"
       >
         <h2 class="text-center">ACCOUNT LOGIN</h2>
         <div class="form-group">
