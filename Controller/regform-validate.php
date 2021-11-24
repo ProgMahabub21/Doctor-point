@@ -78,7 +78,7 @@
                     mysqli_stmt_close($stmt);
                     //close connection
                     mysqli_close($conn);
-                    header("refresh:3;url=../View/login-form.html");
+                    header("refresh:3;url=../View/login-form.php");
                 } else {
                     echo "error";
                     //close connection

@@ -17,7 +17,7 @@
         // setcookie("price","",time()-89400);
 
         session_destroy();
-        header("refresh:5;url=../View/login-form.html");
+        header("refresh:5;url=../View/login-form.php");
     }
     ?>
 

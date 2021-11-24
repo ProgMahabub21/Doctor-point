@@ -7,7 +7,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../View/css/regform.css">
   <title>Patient Registration Form</title>
-
+  <style>
+    .login {
+      font-family: Ubuntu Mono;
+      font-size: 20px;
+      color: black;
+      text-align: center;
+      padding: 20px;
+    }
+    a:hover{
+      color: #44487c;
+    }
+    </style>
   <script type="text/javascript">
     function validateForm() {
       var x = document.patientreg.fname.value;
@@ -165,6 +176,11 @@
     </div>
 
   </form>
+
+  <div class="login" >
+    Already have an account?
+    <a href="login-form.php" >Sign in</a>
+  </div>
   <!-- Script for range input label -->
   <script>
     var rangeLabel = document.getElementById("range-label");

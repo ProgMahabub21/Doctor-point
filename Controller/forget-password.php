@@ -48,7 +48,7 @@
                 // fwrite($fp, json_encode($userData, JSON_PRETTY_PRINT));  
                 // fclose($fp);
                 mysqli_close($conn);
-                header("refresh:2;url=../View/login-form.html");
+                header("refresh:2;url=../View/login-form.php");
             }
             else
                 if(empty($email))
