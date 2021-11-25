@@ -19,57 +19,7 @@
       color: #44487c;
     }
     </style>
-  <script type="text/javascript">
-    function validateForm() {
-      var x = document.patientreg.fname.value;
-      var y = document.patientreg.lname.value;
-      var result;
-
-      var fname = lname = email = age = gender = password = bgs = phone = address = cpass = true;
-
-      if (x == "") {
-        //span element
-        document.getElementById("fname").style.color = "red";
-        document.getElementById("fname").innerHTML = "**First name is required";
-        fname = false;
-      } else {
-        var regex = /^[a-zA-Z\s]+$/;
-        if (regex.test(x) === false) {
-          document.getElementById("fname").innerHTML = "**First name is invalid";
-          fname = false;
-        } else {
-          document.getElementById("fname").innerHTML = "";  
-        }
-      }
-
-      // if (y == "") {
-      //   document.getElementByID("lname").style.borderColor = "red";
-      //   document.getElementById("lname").innerHTML = "**Last name is required";
-      //   lname = false;
-      // }
-      // else{
-      //   var regex = /^[a-zA-Z\s]+$/;
-      //   if (regex.test(y) === false) {
-      //     document.getElementByID("lname").style.borderColor = "red";
-      //     document.getElementById("lname").innerHTML = "**Last name is invalid";
-      //     lname = false;
-      //   } else {
-      //     document.getElementById("lname").innerHTML = "";  
-      //   }
-      // }
-     
-      if((fname || lname || email || age || gender || password || bgs || phone || address || cpass) == false)
-      {
-        return false;
-      }
-      else{
-        //show success message
-        alert("Registration form filled up successfully");
-       
-      }
-    }   
-
-  </script>
+ 
 
 
 </head>
@@ -77,7 +27,7 @@
 <body>
   <?php include 'header.html'; ?>
 
-  <form name="patientreg" class="signup-form" onsubmit="return validateForm()" action="../Controller/regform-validate.php" method="post">
+  <form name="patientreg" class="signup-form" action="../Controller/regform-validate.php" onsubmit="validateForm(); return false;"  method="post">
 
     <!-- form header -->
     <div class="form-header">
@@ -172,7 +122,7 @@
     <!-- form-footer -->
     <div class="form-footer">
       <span style="color:red;">*</span><span> required</span>
-      <button type="submit" class="btn" name="patient">Confirm</button>
+      <input type="submit" class="btn" name="patient" value="Confirm">
     </div>
 
   </form>
@@ -182,6 +132,7 @@
     <a href="login-form.php" >Sign in</a>
   </div>
   <!-- Script for range input label -->
+  <script src="../View/Js/regform.js"></script>
   <script>
     var rangeLabel = document.getElementById("range-label");
     var age = document.getElementById("age");

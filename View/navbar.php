@@ -8,7 +8,7 @@
    
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 
-<nav>
+<nav style="position: sticky; top:0">
 	<a class="logo" href="#"><i class="fas fa-stethoscope fa-2x">   Doctor's Point</i></a>
 	<ul class="nav-bar">
 		<li class="nav-bar_item"><a href="patient-profile.php">Home</a></li>
