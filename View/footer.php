@@ -96,12 +96,16 @@
             <div class="ft-main-item">
                 <h2 class="ft-title">Contact Us</h2>
                 <ul>
-                    <li>Admin Department</li>
-                    <li>+8801750-729276</li>
-                    <li>Email</li>
-                    <li>sasaharukh@gmail.com</li>
-                    <li>HR Department</li>
-                    <li>+8801789-171191</li>
+                    <li>Address:</li>
+                    <li><i class="fas fa-map-marker-alt fa-1g"></i> Gulshan 1, Dhaka-1210</li>
+                    <li>Information Desk:</li>
+                    <li><i class="fas fa-mobile fa-1g"></i> 017894565655</li>
+                    <li>Admin Department:</li>
+                    <li><i class="fas fa-mobile fa-1g"></i> 01750-729276</li>
+                    <li>Email:</li>
+                    <li><i class="fas fa-envelope"></i> sasaharukh@gmail.com</li>
+                    <li>HR Department:</li>
+                    <li><i class="fas fa-mobile fa-1g"></i> 01789-171191</li>
 
                 </ul>
         </section>

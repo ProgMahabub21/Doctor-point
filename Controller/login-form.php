@@ -43,6 +43,7 @@
 					if(mysqli_num_rows($result) > 0)
 					{
 						$loggedin = true;
+						$_SESSION['login'] = $loggedin;
 						$_SESSION['UserName'] = $row['Last_Name'].",".$row['First_Name'];
 						$_SESSION['Usermail'] = $email;
 						setcookie("bname","",time()+86400,"/");
@@ -56,6 +57,7 @@
 					else
 					{
 						$loggedin = false;
+						$_SESSION['Login'] = $loggedin;
 						
 					}
 

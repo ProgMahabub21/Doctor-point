@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient's Account</title>
     <link rel="stylesheet" href="../View/css/pprofile.css">
-    <link rel="stylesheet" href="../View/css/heading.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
     <style>
         .mySlides {
             display: none;
@@ -15,29 +16,34 @@
     </style>
 </head>
 
-<body style="text-align: center; ">
+<body>
 
     <!-- <p style="align:left"><?php //session_start(); echo "Hello! ". $_SESSION['UserName'];
                                 ?></p><p style="display: inline-block; ">Welcome Back! . Check Which doctors are available!!</p><br> -->
-    <?php include "header.html"; ?>
     <?php include "navbar.php"; ?>
 
     <!-- <div class="container">
         <p style="position:absolute; font-size: 30px; font-weight:bold; color:red; top:180px; left:15px; ">Welcome to Doctor's Point</p>
     </div> -->
 
-    <h2 class="h2">Doctor's Point Welcomes You with Dedicated Services </h2>
-
+    <h2 class="h2" style="text-align: center;">Doctor's Point Welcomes You with Dedicated Services </h2>
+<!-- 
     <div class="w3-content w3-display-container">
-        <img class="mySlides" src="../View/image/patient-profile.jpg" style="width:100%; height:720px; padding:5% ">
+        <img class="mySlides" src="../View/image/pic.jpg" style="width:100%; height:720px;  ">
+        <div class="w3-display-left w3-container" >
+            <p style="left: 60%; top:40%; font-weight:bold; font-size:22px">Worried about the health of your delicate children?</p> <br>
+            <p>Our dedicated team of pediatricians are here to understand </p> <br> 
+            <p>the concerns of your dear children and prescribe the right </p><br>
+            <p>treatment for them.</p><br>
+        </div> 
         <img class="mySlides" src="../View/image/patient-profile1.jpg" style="width:100%; height:720px; padding:5%">
         <img class="mySlides" src="../View/image/patient-profile2.jpg" style="width:100%; height:720px; padding:5%">
         <img class="mySlides" src="../View/image/patient-profile3.jpg" style="width:100%; height:720px; padding:5%">
         <img class="mySlides" src="../View/image/patient-profile4.jpg" style="width:100%; height:720px; padding:5%">
 
-        <!-- <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-        <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button> -->
-    </div>
+      <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button> 
+    </div> -->
 
     <script>
         var slideIndex = 0;
@@ -57,20 +63,6 @@
             setTimeout(carousel, 2000); // Change image every 2 seconds
         }
     </script>
-
-
-    <!-- <table>
-        <tr>
-            <td><form action="submitFeedback.php"><input type="submit" value="Feedback"></form></td>
-            <td><form action="chatWithDoc.php"><input type="submit" value="Chat Doc"></form></td>
-            <td><form action="make-appointment.php"><input type="submit" value="Make Appoinment"></form></td>
-            <td><form action="viewPrescription.php"><input type="submit" value="Prescription"></form></td>
-            <td><form action="medicine-shop.php"><input type="submit" value="Purchase Medicine"></form></td>
-            <td><form action="change-password.html"><input type="submit" value="Change Password"></form></td>
-            <td><form action="viewprofile.php"><input type="submit" value="View Profile"></form> </td>
-            <td><form action="../Controller/logout.php" method="post"><input type="submit" value="Log Out" name="logout"></form></td>
-        </tr>
-    </table> -->
 
 
     <?php include "footer.php" ?>

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Give Feedback</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="css/regform.css" />
+  <link rel="stylesheet" href="css/feedback.css" />
   <link rel="stylesheet" href="css/heading.css" />
   <link rel="stylesheet" href="css/footer.css" />
   <link rel="stylesheet" href="css/navigatebar.css" />
@@ -15,9 +15,13 @@
 
 <body>
   <?php require "../Controller/doclist.php"; ?>
-  <?php include "header.html"; 
+  <?php  
         include "navbar.php";
   ?>
+
+  <div class="container">
+    <img src="image/pic1.jpg" alt="Feedback" style="width:100% ;height:480px; left:0">
+  </div>
 
   <form action="../Controller/feedback-validate.php" class="signup-form" method="post">
     <div class="form-header" style="background-color: #24869e;">
