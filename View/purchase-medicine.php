@@ -8,6 +8,8 @@
 </head>
 <body>
     <?php //include "../Controller/medicine-list.php"?>
+    <?php include "navbar.php"; ?>
+    <br><br>
     <form action="../Controller/medicine-list.php"  method="post">
         <fieldset>
             <legend><h3>Search Medicine</h3></legend>
@@ -45,6 +47,7 @@
     
     </form>
 
-    <form action="patient-profile.php"><input type="submit" value="Back"></form>
+    <br><br>
+    <?php include "footer.php"; ?>
 </body>
 </html>

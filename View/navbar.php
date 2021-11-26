@@ -22,16 +22,13 @@
 			<li class="nav-bar_item"><a href="medicine-shop.php">Medicine Shop</a></li>
 			<li class="nav-bar_item dropdown" id="dropdown">
 				<a href="#"><i class="far fa-user">
-					</i><?php session_start();
-						if ($_SESSION['login']) {
-							echo " " . $_SESSION['UserName'];
-						} else {
-							echo "Account";
-						}
-						?></a>
+					</i><?php if (session_status() === PHP_SESSION_NONE) {
+							session_start();
+						};
+						echo " " . $_SESSION['UserName']; ?></a>
 				<ul class="project">
 					<li class="drop-item"><a href="viewprofile.php">View Profile</a></li>
-					<li class="drop-item"><a href="change-password.html">Change Password</a></li>
+					<li class="drop-item"><a href="change-password.php">Change Password</a></li>
 					<li class="drop-item"><a href="../Controller/logout.php?logout">Logout</a></li>
 
 				</ul>

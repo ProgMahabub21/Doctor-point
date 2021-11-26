@@ -1,6 +1,7 @@
 function validateForm() {
-    var x = document.patientreg.fname.value;
-    var y = document.patientreg.lname.value;
+    // var x = document.patientreg.fname.value;
+    // var y = document.patientreg.lname.value;
+    var x = y = null;
     var result;
 
     var fname = lname = email = age = gender = password = bgs = phone = address = cpass = true;

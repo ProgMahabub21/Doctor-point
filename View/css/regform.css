@@ -55,6 +55,12 @@ body {
   font-weight: bold;
 }
 
+.form-body .span-text {
+    color: rgba(243, 13, 13, 0.829);
+    font-size: 15px;
+    font-weight: bold;
+}
+
 .form-body .form-input {
     font-size: 17px;
     box-sizing: border-box;
@@ -141,3 +147,14 @@ input[type="file"] {
   color:white;
 }
 
+.horizontal-span .left{
+  float:left;
+  width:49%;
+
+}
+
+.horizontal-span .right{
+  float:right;
+  width:49%;
+
+}

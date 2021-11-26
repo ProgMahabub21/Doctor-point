@@ -7,9 +7,15 @@
     <title>Online Medicine Shop</title>
 </head>
 <body>
-    <form action="purchase-medicine.php" ><p>Want to purchase medicine? Visit <button type="submit">Order Medicine</button></p></form>
-    <?php include "../Controller/orderlist.php"?>
+<?php include "../Controller/orderlist.php";
+            include "navbar.php";
+    ?>
+    <br><br>
+    <form action="" >
+    
     <fieldset>
+        <legend>Online Medicine Shop</legend>
+        <p>Want to purchase medicine? Visit <a href="purchase-medicine.php">Order Medicine</a></p>
         <legend>Order List</legend>
         <?php
                  echo "<hr>";
@@ -29,5 +35,8 @@
             ?>
 
     </fieldset>
+    </form>
+    <br><br>
+    <?php include "footer.php"; ?>
 </body>
 </html>

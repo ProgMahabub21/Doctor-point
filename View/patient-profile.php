@@ -27,8 +27,8 @@
     </div> -->
 
     <h2 class="h2" style="text-align: center;">Doctor's Point Welcomes You with Dedicated Services </h2>
-<!-- 
-    <div class="w3-content w3-display-container">
+
+    <!-- <div class="">
         <img class="mySlides" src="../View/image/pic.jpg" style="width:100%; height:720px;  ">
         <div class="w3-display-left w3-container" >
             <p style="left: 60%; top:40%; font-weight:bold; font-size:22px">Worried about the health of your delicate children?</p> <br>
