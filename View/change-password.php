@@ -21,9 +21,16 @@
       font-size: 1rem;
       color: #495057;
     }
+    ::placeholder {
+      color: #F5B2A6 ;
+      opacity: 1;
+    }
+    
 
     /* link: https://www.canva.com/colors/color-palettes/summer-splash/ -- colorpalette */
   </style>
+  
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body style=" background-color: #D4F1F4;">
@@ -39,14 +46,24 @@
       <div class="form-group">
         <input type="password" class="form-input" id="OldPassword" name="OldPassword"  placeholder="*Enter Current Password">
       </div>
+      <div class="form-group">
+        <span id="erroldpass" style="color: red; font-weight:bold; font-size:15px;"></span>
+      </div>
       <br>
       <div class="form-group">
-        <input type="password" class="form-input" id="Newpassword" name="Newpassword" placeholder="Enter New Password">
+        <input type="password" class="form-input" id="Newpassword" name="Newpassword" placeholder="*Enter New Password">
+      </div>
+      <div class="form-group">
+        <span id="errnewpass" style="color: red; font-weight:bold; font-size:15px;"></span>
       </div>
       <br>
       <div class="form-group">
         <input type="password" class="form-input" id="Repassword" name="Repassword" placeholder="*Retype New Password">
       </div>
+      <div class="form-group">
+        <span id="errconfirmpass" style="color: red; font-weight:bold; font-size:15px;"></span>
+      </div>
+      <br>
 
 
 
@@ -54,10 +71,12 @@
     </div>
     <div class="form-footer">
       <span style="color:red;">*</span><span> required</span>
-      <button class="btn" onclick="validateForm()">Confirm</button>
+      <button class="btn" style="background-color:#44487c" onclick="validateForm()">Confirm</button>
       <!-- <input type="submit" class="btn" name="patient" value="Confirm"> -->
     </div>
   </div>
+
+  ,<script src="Js/updatepass.js"></script>
 
   <?php include "footer.php";?>
 

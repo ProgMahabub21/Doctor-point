@@ -2,6 +2,7 @@
     <body>
         <?php
             session_start();
+            include 'dbconn.php';
             if(isset($_POST['confirm']))
             {
                 $cardname = $_POST['cardowner'];
@@ -28,11 +29,19 @@
                 echo "Payment Successful. Order booked";
                 $time = date("Y-m-d") ." ".date("h:i:sa");
                 $orderData = json_decode(file_get_contents("../Model/orderData.json",true));
-                $array = array("Order ID"=>$orderID,"Customer Name" => $username, "Medicine Name" => $medicineName, "Generics Name"=> $genename,'Quantity' => $quantity, 'Price'=> $orderPrice,'Payment Status' => $ispaid,'Order Time'=> $time,'Order Status'=> $orderStatus );
-                array_push($orderData, $array);
-                $fp = fopen('../Model/orderData.json', 'w');
-                fwrite($fp, json_encode($orderData, JSON_PRETTY_PRINT));  
-                fclose($fp);
+                // sql to insert data with bind param
+                $sql = "INSERT INTO order_data (OrderID,CustomerName,MedicineName,GenericName,Quantity,Price,PaymentStatus,OrderDate,OrderStatus) VALUES (?,?,?,?,?,?,?,?,?)";
+
+                $stmt = $conn->prepare($sql);
+
+                $stmt->bind_param("isssiisss",$orderID,$username,$medicineName,$genename,$quantity,$orderPrice,$ispaid,$time,$orderStatus);
+
+                $stmt->execute();
+
+                $stmt->close();
+
+                $conn->close();
+   
                 header("refresh:5;url=../View/patient-profile.php");
                 
             }
@@ -43,8 +52,13 @@
                 }
         
         
-        
+        /*              $array = array("Order ID"=>$orderID,"Customer Name" => $username, "Medicine Name" => $medicineName, "Generics Name"=> $genename,'Quantity' => $quantity, 'Price'=> $orderPrice,'Payment Status' => $ispaid,'Order Time'=> $time,'Order Status'=> $orderStatus );
+                array_push($orderData, $array);
+                $fp = fopen('../Model/orderData.json', 'w');
+                fwrite($fp, json_encode($orderData, JSON_PRETTY_PRINT));  
+                fclose($fp); */
         
         ?>
     </body>
 </html>
+

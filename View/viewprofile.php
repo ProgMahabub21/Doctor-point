@@ -7,13 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
     <link rel="stylesheet" href="../View/css/profile.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
     <?php include "../Controller/patientlist.php";
     include "navbar.php";
     ?>
-    <form action="../Controller/updateprofile.php" class="signup-form" method="POST">
+   
+    <div class="signup-form" >
 
         <div class="form-header">
             <h2>Profile Details</h2>
@@ -64,11 +67,15 @@
         </div>
         <div class="form-footer">
             <span style="color:red;">*</span><span> Can be Updated Only [Must be Valid Info]</span>
-            <input type="submit" class="btn" id="update" value="Update" name="update"> <br>
+            <button class="btn" id="update" name="update" onclick="profileupdate()">Update</button>
         </div>
       
-    </form>
+    </div>
     <?php include "footer.php"; ?>
+
+    <script src="../View/js/profileupdate.js"></script>
 </body>
 
 </html>
+
+

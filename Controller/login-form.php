@@ -1,16 +1,11 @@
-<html>
-    <body>
+
     <?php 
 		
 		session_start();
 
 		//db connect using mysqLi procedural
-		$server = "localhost";
-		$user = "root";
-		$pass = "admin2020";
-		$db = "doctor_point";
-
-		$conn = mysqli_connect($server, $user, $pass, $db);
+		require "dbconn.php";
+		
 
 		if ($_SERVER["REQUEST_METHOD"] == "POST"){	
 			$email = $_POST['email'];
@@ -51,13 +46,14 @@
         				setcookie("compname","",time()+86400,"/");
         				setcookie("type","",time()+86400,"/");
         				setcookie("price","",time()+86400,"/");
-					
+						
 						
 					}
 					else
 					{
 						$loggedin = false;
 						$_SESSION['Login'] = $loggedin;
+						
 						
 					}
 
@@ -94,17 +90,16 @@
 
 			
               if($loggedin){
-				echo "Login Successful<br>";
+				// echo "Login Successful<br>";
 				mysqli_close($conn);
+				echo json_encode(array("statusCode"=>200));
 				header("refresh:2;url= ../View/patient-profile.php");
                 
                 }else{
-
-					echo "Invalid Email or Password\n";
-					echo "login failed";
+					echo json_encode(array("statusCode"=>400));
+					// echo "Invalid Email or Password\n";
+					// echo "login failed";
 				}
 		}
 		
 	?>
-    </body>
-</html>

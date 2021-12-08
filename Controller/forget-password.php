@@ -1,9 +1,8 @@
-<html>
-    <body>
+
         <?php
             $server = "localhost";
             $user = "root";
-            $pass = "admin2020";
+            $pass = "";
             $db = "doctor_point";
     
             $conn = mysqli_connect($server, $user, $pass, $db);
@@ -27,11 +26,13 @@
                     $result = mysqli_query($conn, $sql);
                     if($result)
                     {
-                        echo "Password changed successfully";
+                        // echo "Password changed successfully";
+                        echo json_encode(array("statusCode"=>200));
                     }
                     else
                     {
-                        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+                        // echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+                        echo json_encode(array("statusCode"=>500)); //server side error
                     }
                 }
                 // $userData = json_decode(file_get_contents("../Model/patientData.json",true),true);
@@ -51,11 +52,10 @@
                 header("refresh:2;url=../View/login-form.php");
             }
             else
-                if(empty($email))
-                    echo "email must be given";
-                if(empty($new_password))
-                    echo "password can't be empty";
+                // if(empty($email))
+                //     echo "email must be given";
+                // if(empty($new_password))
+                //     echo "password can't be empty";
+                echo json_encode(array("statusCode"=>400));
         
         ?>
-    </body>
-</html>

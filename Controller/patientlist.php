@@ -6,7 +6,7 @@
 
     $server = "localhost";
     $user = "root";
-    $pass = "admin2020";
+    $pass = "";
     $db = "doctor_point";
 
     $conn = mysqli_connect($server, $user, $pass, $db);

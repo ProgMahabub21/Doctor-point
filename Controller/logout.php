@@ -1,6 +1,3 @@
-<html>
-
-<body>
 
 
     <?php
@@ -20,7 +17,3 @@
         header("refresh:5;url=../View/login-form.php");
     }
     ?>
-
-</body>
-
-</html>

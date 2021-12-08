@@ -13,16 +13,18 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/login.css" />
   </head>
   <body>
   
-  <div class="login-form">
-      <form
-        action="../Controller/login-form.php"
+  <div class="login-form" style="display: inline-block;">
+      <!-- <form
+        action=""
         method="POST"
         style="display: inline-block;"
-      >
+        onsubmit="validateForm();return false;"
+      > -->
         <h2 class="text-center">ACCOUNT LOGIN</h2>
         <div class="form-group">
           <input
@@ -45,7 +47,7 @@
           />
         </div>
         <div class="form-group">
-          <button type="submit" class="login-form button">
+          <button type="submit" class="login-form button" onclick="validateForm()">
             Log in
           </button>
         </div>
@@ -53,7 +55,7 @@
           <label class="float-left form-check-label"
             ><input type="checkbox" /> Remember me</label
           >
-          <a href="forget-password.html" class="float-right" style="margin-left: 45px;">Forgot Password?</a>
+          <a href="forget-password.php" class="float-right" style="margin-left: 45px;">Forgot Password?</a>
         </div>
         <br>
         <div class="text-center">
@@ -62,10 +64,12 @@
           </p>
         </div>
         <div class="text-center"><a href="patients-form.php">Sign up</a></div>
-      </form>
+      <!-- </form> -->
     </div>
     
     <?php  include "footer.php" ?>
+
+    <script src="Js/login.js"></script>
 
   </body>
 </html>

@@ -5,6 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prescription</title>
+
+    <style>
+         body {
+            background-color: #a456  ;
+        }
+        .div {
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+        
+        #prescription {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            background-color: antiquewhite;
+        }
+
+        #prescription td,
+        #prescription th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+
+
+        #prescription tr:hover {
+            background-color: #a4f4fc;
+        }
+
+        #prescription th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #213970;
+            color: white;
+        }
+         h1 {
+            background-color: #210070;
+          
+            font-size: 20px;
+            text-align: center;
+            color: #fff;
+            width: 40%;
+            padding: 10px 0; 
+            border-bottom: 1px solid #cccccc;
+        }
+    </style>
     
 </head>
 <body>
@@ -12,11 +59,13 @@
         include "navbar.php";
         ?>
         <br><br>
-        <fieldset>
-            <legend>Prescription History</legend>
+        <div class="div">
+            <h1>Prescription History</h1>
+            <br> <br>
+
             <?php
-                 echo "<hr>";
-                echo "<table border='1'>";
+                echo "<hr>";
+                echo "<table  id='prescription'>";
                 echo "<tr><th>Prescription ID</th><th>Doctor's Name</th><th>Diagnosis</th><th>Instruction</th><th>Issued Time</th>
                 </tr>";
                 for($i=0;$i<=$count-1;$i++)
@@ -30,10 +79,10 @@
                 }
                 echo "</table>";
             ?>
+        </div>
 
 
-
-        </fieldset>
+    
         <br><br>
         <?php include "footer.php"; ?>
 </body>

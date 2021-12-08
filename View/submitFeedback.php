@@ -11,19 +11,22 @@
   <link rel="stylesheet" href="css/heading.css" />
   <link rel="stylesheet" href="css/footer.css" />
   <link rel="stylesheet" href="css/navigatebar.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 </head>
 
 <body>
   <?php require "../Controller/doclist.php"; ?>
-  <?php  
-        include "navbar.php";
+  <?php
+  include "navbar.php";
   ?>
 
-  <div class="container">
+  <!-- <div class="container">
     <img src="image/pic1.jpg" alt="Feedback" style="width:100% ;height:480px; left:0">
-  </div>
+  </div> -->
 
-  <form action="../Controller/feedback-validate.php" class="signup-form" method="post">
+  <!-- <form action="../Controller/feedback-validate.php" class="signup-form" method="post"> -->
+  <div class="signup-form">
     <div class="form-header" style="background-color: #24869e;">
       <h1 style="color: white;">Patient's Feedback Form</h1>
     </div>
@@ -58,11 +61,41 @@
     </div>
     <div class="form-footer">
       <span style="color:red;">*</span><span> required</span>
-      <input type="submit" class="btn" style="background-color: #44487c;" name="patient" value="Confirm">
+      <button class="btn" style="background-color: #44487c;" onclick="sendfeedback()">Confirm</button>
     </div>
-  </form>
+  </div>
+  <!-- </form> -->
 
-  <?php include "footer.php";?>
+  <?php include "footer.php"; ?>
+
+  <script>
+    function sendfeedback() {
+
+      console.log("validateForm");
+      var docname = document.getElementById("docname").value;
+      var dept = document.getElementById("dept").value;
+      var msg = document.getElementById("message").value;
+
+
+      if (msg == "") {
+        alert("Please enter your message");
+
+      } else {
+
+
+
+        $.post("https://jsonplaceholder.typicode.com/todos/1", {
+          docname: docname,
+          message: message,
+          dept: dept
+        }, function name(data) {
+          console.log(data);
+        });
+
+      }
+    }
+  </script>
+  <!-- <script src="Js/feedback.js"></script> -->
 </body>
 
 </html>

@@ -1,11 +1,9 @@
-<html>
 
-<body>
     <?php
     session_start();
     $server = "localhost";
     $user = "root";
-    $pass = "admin2020";
+    $pass = "";
     $db = "doctor_point";
 
     $conn = mysqli_connect($server, $user, $pass, $db);
@@ -13,18 +11,21 @@
 
     // Check connection
     if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
+        // die("Connection failed: " . mysqli_connect_error());
+        echo json_encode(array('statusCode'=>500));
     }
 
-    if (isset($_POST['update'])) {
-        $patient_fname = $_POST['fname'];
-        $patient_lname = $_POST['lname'];
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // $patient_fname = $_POST['fname'];
+        // $patient_lname = $_POST['lname'];
         $patient_age = $_POST['age'];
         $patient_address = $_POST['address'];
         $patient_bloodGroup = $_POST['bgs'];
         $patient_phone = $_POST['contact'];
         $patient_gender = $_POST['gender'];
         $curr_user = $_SESSION['Usermail'];
+
+        
 
         if($conn)
         {
@@ -38,10 +39,12 @@
             $result = mysqli_query($conn, $sql);
             if($result > 0)
             {
-                echo "update successful ";
+                // echo "update successful ";
+                echo json_encode(array('statusCode'=>200));
             }
             else
-                echo "update failed";
+                // echo "update failed";
+                echo json_encode(array('statusCode'=>400));
         }
         // echo "update successful ";
         // $userData = json_decode(file_get_contents("../Model/patientData.json", true), true);
@@ -71,6 +74,3 @@
         header("Location:../View/patient-profile.php", true, 302);
     }
     ?>
-</body>
-
-</html>

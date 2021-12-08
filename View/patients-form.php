@@ -20,7 +20,7 @@
     }
     </style>
  
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </head>
 
@@ -183,131 +183,8 @@
     function change() {
       rangeLabel.innerText = age.value + "Yrs";
     }
-
-    function validateForm() {
-    
-    var x = document.getElementById("firstname").value;
-    var y = document.getElementById("lastname").value;
-    var z = document.getElementById("email").value;
-    var g = document.querySelector( 'input[name="gender"]:checked');  ;
-    var a = document.getElementById("age").value;
-    var pass = document.getElementById("password").value;
-    var conpassd = document.getElementById("confirm-password").value;
-    var bg = document.getElementById("level").value;
-    var num = document.getElementById("contact").value;
-    var add = document.getElementById("address").value;
-    // var x = y = null;
-    var result;
-
-    var fname = lname = email = age = gender = password = bgs = phone = address = cpass = true;
-
-    if (x == "") {
-      //span element
-      document.getElementById("fname").innerHTML = "**First name is required";
-      fname = false;
-    } else {
-      var regex = /^[a-zA-Z\s]+$/;
-      if (regex.test(x) === false) {
-        document.getElementById("fname").innerHTML = "**First name is invalid";
-        fname = false;
-      } else {
-        document.getElementById("fname").innerHTML = "";  
-      }
-    }
-
-    if (y == "") {
- 
-      document.getElementById("lname").innerHTML = "**Last name is required";
-      lname = false;
-    }
-    else{
-      var regex = /^[a-zA-Z\s]+$/;
-      if (regex.test(y) === false) {
-
-        document.getElementById("lname").innerHTML = "**Last name is invalid";
-        lname = false;
-      } else {
-        document.getElementById("lname").innerHTML = "";  
-      }
-    }
-
-    //check valid email
-    if (z == "") {
-
-      document.getElementById("erremail").innerHTML = "**Email is required";
-      email = false;
-    } else {
-      var regex = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-      if (regex.test(z) === false) {
-
-        document.getElementById("erremail").innerHTML = "**Email is invalid";
-        email = false;
-      } else {
-        document.getElementById("erremail").innerHTML = "";  
-      }
-    }
-    // check if gender is selected or not
-    if(g == null){
-  
-      document.getElementById("errgender").innerHTML = "**Select a Gender";
-      gender= false;
-    }
-    if(a == '0')
-    {
-  
-      document.getElementById("errage").innerHTML = "**Age can't be 0";
-      age = false;
-    }
-    if(pass == "")
-    {
-      document.getElementById("pass").innerHTML = "**Password is required";
-    }
-    else
-    {
-      if(pass.length < 8)
-      {
-        document.getElementById("pass").innerHTML = "**Password must be atleast 8 characters";
-      }
-    }
-
-    if(conpassd == "")
-    {
-      document.getElementById("conpass").innerHTML = "**Confirm Password is required";
-    }
-    else
-    {
-      if(conpassd != pass)
-      {
-        document.getElementById("conpass").innerHTML = "**Password doesn't match";
-      }
-    }
-    if(bg == "none")
-    {
-      document.getElementById("errbg").innerHTML = "**Blood Group is required";
-    }
-    if(num == "")
-    {
-      document.getElementById("errnum").innerHTML = "**Phone number is required";
-    }
-    else
-    {
-      if(num.length != 11 || isNaN(num))
-      {
-        document.getElementById("errnum").innerHTML = "**Phone number is invalid";
-      }
-    }
-    if((fname || lname || email || age || gender || password || bgs || phone || address || cpass) == false)
-    {
-      //return false;
-    }
-    else{
-      //show success message
-      alert("Registration form filled up successfully"+ lname + fname + z + g + a);
-     
-    }
-  }   
-
   </script>
+  <script src="Js/regform.js"></script>
 
 
 

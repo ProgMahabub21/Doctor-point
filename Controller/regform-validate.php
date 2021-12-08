@@ -1,5 +1,3 @@
-<html>
-<body>
 
     <?php
     session_start();
@@ -23,20 +21,24 @@
             empty($patient_fname) || empty($patient_lname) || empty($patient_age) || empty($patient_bloodGroup)
             || empty($patient_password) || empty($patient_phone) || empty($patient_gender)
         ) {
-            if (empty($patient_fname))
-                echo "first name fieldcan't be empty";
-            if (empty($patient_lname))
-                echo "last name field can't be empty";
-            if (empty($patient_age))
-                echo " age field can't be empty";
-            if (empty($patient_bloodGroup) || $patient_bloodGroup == 'None')
-                echo " blood group field can't be empty";
-            if (empty($patient_phone))
-                echo " phone no field can't be empty";
-            if (empty($patient_password))
-                echo " password field can't be empty";
-            if (empty($patient_gender))
-                echo " password field can't be empty";
+            // if (empty($patient_fname))
+            //     // echo "first name fieldcan't be empty";
+               
+            // if (empty($patient_lname))
+            //     // echo "last name field can't be empty";
+            // if (empty($patient_age))
+            //     // echo " age field can't be empty";
+            // if (empty($patient_bloodGroup) || $patient_bloodGroup == 'None')
+            //     // echo " blood group field can't be empty";
+            // if (empty($patient_phone))
+            //     // echo " phone no field can't be empty";
+            // if (empty($patient_password))
+            //     // echo " password field can't be empty";
+            // if (empty($patient_gender))
+            //     // echo " password field can't be empty";
+            echo json_encode(array('statusCode' => 400));
+            header("refresh:10;url=../View/patient-form.php");
+
         } else {
             //sql to select query with bind param
             $sql1= "SELECT Email FROM patient_data";
@@ -49,8 +51,9 @@
                $extemail = $row["Email"];
                if($extemail == $patient_email)
                {
-                   echo "Email already exists\n";
-                   echo "<a href='../View/patients-form.php'>Try again</a>";
+                //    echo "Email already exists\n";
+                   echo json_encode(array('statusCode' =>803));
+                   header("Location: ../View/patient-form.php");
                }                
             }
             if($conn)
@@ -73,23 +76,27 @@
                 //check successful insert 
                 //$result = mysqli_query($conn, $sql);
                 if(mysqli_stmt_execute($stmt)){
-                    echo "registration successful ";
+                    echo json_encode(array("statusCode"=>200));
+                    // echo "registration successful ";
                     session_destroy();
                     mysqli_stmt_close($stmt);
                     //close connection
                     mysqli_close($conn);
                     header("refresh:3;url=../View/login-form.php");
                 } else {
+                    echo json_encode(array("statusCode"=>401));
                     echo "error";
                     //close connection
                     mysqli_close($conn);
-                    header("refresh:10;url=../View/first-form.html");
+                    header("refresh:10;url=../View/patient-form.php");
                 }
 
             }
             else
             {
-                echo "connection failed";
+                // echo "connection failed";
+                echo json_encode(array("statusCode"=>500));
+
             }
     
             // $existingData = json_decode(file_get_contents("../Model/patientData.json",true));
@@ -102,5 +109,3 @@
         }
     }
     ?>
-</body>
-</html>

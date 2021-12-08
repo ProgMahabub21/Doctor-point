@@ -1,15 +1,15 @@
-<html>
-    <body>
+
     <?php
     session_start();
     $server = "localhost";
     $user = "root";
-    $pass = "admin2020";
+    $pass = "";
     $db = "doctor_point";
     
     $conn = mysqli_connect($server, $user, $pass, $db);
     if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
+       // die("Connection failed: " . mysqli_connect_error());
+       echo json_encode(array("statusCode"=>500));
     }
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $old_password = $_POST['OldPassword'];
@@ -26,10 +26,12 @@
                 if($row['password'] == $old_password){
                     $sql = "UPDATE patient_data SET password = '$new_password' WHERE Email = '$curr_user'";
                     $result = mysqli_query($conn, $sql);
-                    echo "Password Updated Successfully";
+                    //echo "Password updated successfully"; 
+                    echo json_encode(array("statusCode"=>200));         //html sucess response
                 }
                 else{
-                    echo "Given Old Password is incorrect";
+                   // echo "Given Old Password is incorrect";
+                   echo json_encode(array("statusCode"=>801));
                 }
                 // $userData = json_decode(file_get_contents("../Model/patientData.json", true), true);
                 // foreach ($userData as $x => $val) {
@@ -50,15 +52,13 @@
             
             }
                     
-                // $fp = fopen('../Model/patientData.json', 'w');
-                // fwrite($fp, json_encode($userData, JSON_PRETTY_PRINT));
-                // fclose($fp);
+               
             else
-                echo "New Password & retyped password doesn't match";
+            echo json_encode(array("statusCode"=>802));
+               // echo "New Password & retyped password doesn't match";
         }
         else
-            echo "any field can't be empty";
+            echo json_encode(array("statusCode"=>400));
+           // echo "any field can't be empty";
     }
     ?>
-    </body>
-</html>
