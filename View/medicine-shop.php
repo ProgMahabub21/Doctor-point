@@ -143,6 +143,10 @@
             }
             echo "</tr>";
         }
+        if($count==0)
+        {
+            echo "<tr><td colspan='5' style='text-align:center'>No Prescription Found</td></tr>";
+        }
         echo "</table>";
         ?>
 

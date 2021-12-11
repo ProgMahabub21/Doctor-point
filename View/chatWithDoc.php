@@ -6,39 +6,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat With Our Doctors</title>
+    <link rel="stylesheet" href="css/feedback.css">
+    <style>
+        body{
+            background-color: #f2f2f2;
+        }
+    </style>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
-    <?php include "../Controller/chatlist.php";
+    <?php //include "../Controller/chatlist.php";
     include "navbar.php";
     ?>
-    <br><br>
-    <form action="">
 
-        <fieldset>
-            <legend>Chat With Doc</legend>
-            <p>
-            <h4>Want to chat with new doc? <a href="newchat.php">Create Chat</a></h4>
-            </p>
-            <h4>Previous Chat History</h4>
-            <?php
-            echo "<hr>";
-            echo "<table border='1'>";
-            echo "<tr><th>Doctor's Name+ Designation</th><th>Your Message</th><th>Doctor's Reply</th>";
-            for ($i = 0; $i <= $count - 1; $i++) {
-                echo "<tr>";
-                foreach ($array[$i] as $key => $val) {
-                    echo "<td>" . $val . "</td>";
-                }
-                echo "</tr>";
-            }
-            echo "</table>";
-            ?>
-        </fieldset>
-    </form>
+    <div class="signup-form">
+        <div class="form-header">
+            <h1>Chat With Your appointed Doctors</h1>
+        </div>
+        <div class="form-body">
+            <div class="form-group">
+                <label for="appid" class="label-title" >Appointment ID:</label><br><br>
+                <input type="text" class="form-input" id="appid" name="appid" placeholder="Enter Appointment ID" >
 
-    <br><br>
+            </div>
+            <span id="appid_error" class="error" style="font-weight: bold; color:red "></span><br><br>
+            <div class="form-group">
+                <button class="btn" style="background-color:#44487c" onclick="verify()" >Continue</button>
+            </div>
+        </div>
+    </div>
+  
     <?php include "footer.php"; ?>
+    <script src="Js/chatverify.js"></script>
 </body>
 
 </html>

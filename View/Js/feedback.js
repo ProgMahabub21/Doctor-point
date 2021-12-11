@@ -9,6 +9,7 @@ function sendfeedback()
 
     if(msg == "")
     {
+        document.getElementById("message").style.borderColor = "red";
         alert("Please enter your message");
     
     }

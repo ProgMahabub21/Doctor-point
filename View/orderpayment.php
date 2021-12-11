@@ -16,6 +16,7 @@
             <h2 style="left: 10%; text-align:left; padding: 20px 0;border-bottom: 1px solid #cccccc;">Payment Details</h2>
         </div>
         <div class="form-body">
+            <div class="form-group">
             <label for="amt" class="label-title">Due Amount:</label>
             <input type="text" class="form-input" name="amt" id="amt" value="<?php echo $_COOKIE['price']." TK" ?>">
             <label for="cardowner" class="label-title">CardHolder Name:</label><br>
@@ -26,9 +27,11 @@
             <input type="date" class="form-input" name="expiry" id="expiry"><br>
             <label for="cardcvv" class="label-title">CVV (3 digits):</label><br>
             <input type="number" class="form-input" name="cardcvv" id="cardcvv"><br><br>
-            <input type="submit" class="btn" name = "confirm" value="Confirm">
+            </div>
         </div>
- 
+        <div class="form-footer">
+        <input type="submit" class="btn" name = "confirm" value="Confirm"><br><br>
+        </div>
     </form>
 
     <?php include 'footer.php'; ?>

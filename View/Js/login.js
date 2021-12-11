@@ -12,16 +12,7 @@ function validateForm()
         return false;
     }
 
-    // xttml form
-    // var xhttp = new XMLHttpRequest();
-    // xhttp.onload = function() {
-    //    console.log(this.responseText);
-    // }
-    // var params = "email=" + x + "&password=" + y;
-    // //send params to login.php
-    // xhttp.open("POST", "../../Controller/update-password.php", true);
-    // xhttp.send(params);
-    // alert("Email: " + x + " Password: " + y);
+
 
     $.ajax({
         url: "../Controller/login-form.php",

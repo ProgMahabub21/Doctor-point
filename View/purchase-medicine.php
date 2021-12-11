@@ -151,8 +151,8 @@
                                                                                                     echo " ";
                                                                                                 } ?>"><br>
                     <label for="price" class="label-title">Price(1 Pcs)</label>
-                    <input type="text" class="form-input" name="medprice" id="medprice" value="<?php if (isset($_COOKIE['price'])) {
-                                                                                                    echo $_COOKIE['price'];
+                    <input type="text" class="form-input" name="medprice" id="medprice" value="<?php if (isset($_COOKIE['medprice'])) {
+                                                                                                    echo $_COOKIE['medprice'];
                                                                                                 } else {
                                                                                                     echo " ";
                                                                                                 } ?>"><br>

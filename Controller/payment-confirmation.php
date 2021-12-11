@@ -37,8 +37,9 @@
                 //check if sql statement executed successfully
                 if(mysqli_stmt_affected_rows($stmt) > 0)
                 {
-                    echo "Payment Successful.Appointment booked <br>";
-                    echo "Your Appointment id =". $paymentid."<br>";
+                   // echo "Payment Successful.Appointment booked <br>";
+                    $alert ="Your Appointment id =". $paymentid ." use the id for chat with the doctor";
+                    echo "<script>alert('$alert');</script>";
                 }
 
                 //close sql statement
@@ -94,7 +95,7 @@
 
                 }
             
-            header("refresh:5;url=../View/patient-profile.php");
+            header("refresh:1;url=../View/patient-profile.php");
         
         ?>
 

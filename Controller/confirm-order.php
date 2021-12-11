@@ -51,7 +51,8 @@
             }
             else
                 {
-                    echo "Payment denied. Order cancelled";
+                    echo "<script>alert('Payment denied. Order cancelled')</script>";
+                    header("refresh:1;url=../View/patient-profile.php");
 
                 }
         

@@ -68,7 +68,7 @@
     setcookie("gname",$displaygens,time()+86400,"/");
     setcookie("compname",$displaycomp,time()+86400,"/");
     setcookie("type",$displaytype,time()+86400,"/");
-    setcookie("price",$displayprice,time()+86400,"/");
+    setcookie("medprice",$displayprice,time()+86400,"/");
 
     header("Location: ../View/purchase-medicine.php",true,302);
     }
@@ -76,7 +76,7 @@
     {
 
     if(isset($_POST['qtn'])){$amount = $_POST['qtn'];}
-    if(!empty($amount)){$price = $_COOKIE['price']*$amount;}
+    if(!empty($amount)){$price = $_COOKIE['medprice']*$amount;}
 
     if(empty($amount))
     {

@@ -60,7 +60,7 @@
 
     //check if data is inserted
     if (mysqli_affected_rows($conn) > 0) {
-        echo "Appointment booked successfully.Redirecting you to Payment page. Please complete payment for confirmation";
+        echo "<script>alert('Appointment booked successfully.Redirecting you to Payment page. Please complete payment for confirmation')</script>";
 
         //close statement
         mysqli_stmt_close($stmt);
@@ -69,7 +69,7 @@
         mysqli_close($conn);
 
         setcookie("payid",$appid,time()+600);
-        header("refresh:5;url=../View/makePayment.php");
+        header("refresh:1;url=../View/makePayment.php");
     } else {
         echo "Appointment booking failed";
     }

@@ -16,6 +16,10 @@
                 mysqli_stmt_bind_param($stmt, "s", $curr_mail);
                 mysqli_stmt_execute($stmt);
                 $result = mysqli_stmt_get_result($stmt);
+                //check if the user has any prescription history
+
+
+               if(mysqli_num_rows($result)>0){
                 while($row = mysqli_fetch_assoc($result)){
            
                     $prescriptionData[$count]['PrescriptionID'] = $row['PrescriptionID'];
@@ -27,6 +31,8 @@
 
                     $count++;
                 }
+            }
+           
             }
             mysqli_stmt_close($stmt);
 

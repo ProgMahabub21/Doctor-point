@@ -21,23 +21,9 @@
             empty($patient_fname) || empty($patient_lname) || empty($patient_age) || empty($patient_bloodGroup)
             || empty($patient_password) || empty($patient_phone) || empty($patient_gender)
         ) {
-            // if (empty($patient_fname))
-            //     // echo "first name fieldcan't be empty";
-               
-            // if (empty($patient_lname))
-            //     // echo "last name field can't be empty";
-            // if (empty($patient_age))
-            //     // echo " age field can't be empty";
-            // if (empty($patient_bloodGroup) || $patient_bloodGroup == 'None')
-            //     // echo " blood group field can't be empty";
-            // if (empty($patient_phone))
-            //     // echo " phone no field can't be empty";
-            // if (empty($patient_password))
-            //     // echo " password field can't be empty";
-            // if (empty($patient_gender))
-            //     // echo " password field can't be empty";
+          
             echo json_encode(array('statusCode' => 400));
-            header("refresh:10;url=../View/patient-form.php");
+            header("refresh:2;url=../View/patient-form.php");
 
         } else {
             //sql to select query with bind param
@@ -58,7 +44,8 @@
             //check if email already exists
             if (mysqli_num_rows($result1) > 0) {
                 echo json_encode(array('statusCode' => 803));
-                header("refresh:10;url=../View/patient-form.php");
+                return;
+                header("refresh:2;url=../View/patient-form.php");
             } 
             if($conn)
             {
@@ -72,10 +59,7 @@
 
                 }
 
-                // $sql = "INSERT INTO patient_data values('$patient_fname','$patient_lname','$patient_age','$patient_gender','$patient_address',
-                // '$patient_phone','$patient_email','$patient_password','$patient_bloodGroup')";
-                // $sql = "INSERT INTO patient_data values('$patient_fname','$patient_lname','$patient_age','$patient_gender','$patient_address',
-                // '$patient_phone','$patient_email','$patient_password','$patient_bloodGroup'";
+         
 
                 //check successful insert 
                 //$result = mysqli_query($conn, $sql);
@@ -92,7 +76,7 @@
                    // echo "error";
                     //close connection
                     mysqli_close($conn);
-                    header("refresh:10;url=../View/patient-form.php");
+                    header("refresh:2;url=../View/patient-form.php");
                 }
 
             }

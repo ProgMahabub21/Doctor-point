@@ -39,7 +39,7 @@
 					{
 						$loggedin = true;
 						$_SESSION['login'] = $loggedin;
-						$_SESSION['UserName'] = $row['Last_Name'].",".$row['First_Name'];
+						$_SESSION['UserName'] = $row['Last_Name'].", ".$row['First_Name'];
 						$_SESSION['Usermail'] = $email;
 						setcookie("bname","",time()+86400,"/");
         				setcookie("gname","",time()+86400,"/");

@@ -8,7 +8,7 @@
 
     <style>
          body {
-            background-color: #a456  ;
+            background-color: #bcacd4  ;
         }
         .div {
             margin-left: 10%;
@@ -76,6 +76,10 @@
                         echo "<td>".$val."</td>";
                     }
                     echo"</tr>";
+                }
+                if($count==0)
+                {
+                    echo "<tr><td colspan='5' style='text-align:center'>No Prescription Found</td></tr>";
                 }
                 echo "</table>";
             ?>

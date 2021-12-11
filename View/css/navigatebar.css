@@ -44,7 +44,7 @@
     width: 7px;
     height: 7px;
     cursor: pointer;
-    transform: rotate(-45deg);
+    transform: rotate(-90deg);
     border-left: 5px solid #fff;
     border-bottom: 5px solid #fff;
     transition: 0.2s ease-in-out;

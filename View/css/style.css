@@ -1,16 +1,7 @@
-/*---------------------------------------*/
-/* Font */
-/*---------------------------------------*/
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-
-
-/*---------------------------------------*/
-/* Register Form */
-/*---------------------------------------*/
-body {
-  /* background:linear-gradient(to right, #78a7ba 0%, #385D6C 50%, #78a7ba 99%); */
-  background-image: url('../image/reg-bg.jpg');
+.text {
+  text-align: center;
 }
+
 
 .signup-form {
   font-family: "Roboto", sans-serif;
@@ -55,16 +46,10 @@ body {
   font-weight: bold;
 }
 
-.form-body .span-text {
-    color: rgba(243, 13, 13, 0.829);
-    font-size: 15px;
-    font-weight: bold;
-}
-
 .form-body .form-input {
     font-size: 17px;
     box-sizing: border-box;
-    width: 100%;
+    width: 85%;
     height: 34px;
     padding-left: 10px;
     padding-right: 10px;
@@ -78,33 +63,6 @@ body {
 
 
 
-.horizontal-group .left{
-  float:left;
-  width:49%;
-}
-
-.horizontal-group .right{
-  float:right;
-  width:49%;
-}
-
-input[type="file"] {
-  outline: none;
-  cursor:pointer;
-  font-size: 17px;
-}
-
-#range-label {
-  width:15%;
-  padding:5px;
-  background-color: #1BBA93;
-  color:white;
-  border-radius: 5px;
-  font-size: 17px;
-  position: relative;
-  top:-8px;
-}
-
 
 ::-webkit-input-placeholder  {
   color:#d9d9d9;
@@ -113,23 +71,9 @@ input[type="file"] {
 /*---------------------------------------*/
 /* Form Footer */
 /*---------------------------------------*/
-.signup-form .form-footer  {
-  background-color: #EFF0F1;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  padding:10px 40px;
-  text-align: right;
-  border-top: 1px solid #cccccc;
-  clear:both;
-}
 
-.form-footer span {
-  float:left;
-  margin-top: 10px;
-  color:#999;  
-  font-style: italic;
-  font-weight: thin;
-}
+
+
 
 .btn {
    display:inline-block;
@@ -147,14 +91,7 @@ input[type="file"] {
   color:white;
 }
 
-.horizontal-span .left{
-  float:left;
-  width:49%;
-
-}
-
-.horizontal-span .right{
-  float:right;
-  width:49%;
-
+.container{
+    width: 100%;
+    padding: 0px;
 }
