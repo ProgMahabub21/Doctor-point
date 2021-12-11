@@ -13,7 +13,7 @@
     <form action="../Controller/confirm-order.php" method="POST" class="payment-form">
    
         <div class="form-header">
-            <h2>Payment Details</h2>
+            <h2 style="left: 10%; text-align:left; padding: 20px 0;border-bottom: 1px solid #cccccc;">Payment Details</h2>
         </div>
         <div class="form-body">
             <label for="amt" class="label-title">Due Amount:</label>
@@ -25,10 +25,7 @@
             <label for="expiry" class="label-title">Expiry Date:</label><br>
             <input type="date" class="form-input" name="expiry" id="expiry"><br>
             <label for="cardcvv" class="label-title">CVV (3 digits):</label><br>
-            <input type="number" class="form-input" name="cardcvv" id="cardcvv"><br>
-
-        </div>
-        <div class="form-footer">
+            <input type="number" class="form-input" name="cardcvv" id="cardcvv"><br><br>
             <input type="submit" class="btn" name = "confirm" value="Confirm">
         </div>
  

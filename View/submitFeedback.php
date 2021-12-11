@@ -21,11 +21,6 @@
   include "navbar.php";
   ?>
 
-  <!-- <div class="container">
-    <img src="image/pic1.jpg" alt="Feedback" style="width:100% ;height:480px; left:0">
-  </div> -->
-
-  <!-- <form action="../Controller/feedback-validate.php" class="signup-form" method="post"> -->
   <div class="signup-form">
     <div class="form-header" style="background-color: #24869e;">
       <h1 style="color: white;">Patient's Feedback Form</h1>
@@ -68,34 +63,7 @@
 
   <?php include "footer.php"; ?>
 
-  <script>
-    function sendfeedback() {
-
-      console.log("validateForm");
-      var docname = document.getElementById("docname").value;
-      var dept = document.getElementById("dept").value;
-      var msg = document.getElementById("message").value;
-
-
-      if (msg == "") {
-        alert("Please enter your message");
-
-      } else {
-
-
-
-        $.post("https://jsonplaceholder.typicode.com/todos/1", {
-          docname: docname,
-          message: message,
-          dept: dept
-        }, function name(data) {
-          console.log(data);
-        });
-
-      }
-    }
-  </script>
-  <!-- <script src="Js/feedback.js"></script> -->
+  <script src="Js/feedback.js"></script>
 </body>
 
 </html>

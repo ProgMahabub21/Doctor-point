@@ -31,16 +31,20 @@
                 $orderData = json_decode(file_get_contents("../Model/orderData.json",true));
                 // sql to insert data with bind param
                 $sql = "INSERT INTO order_data (OrderID,CustomerName,MedicineName,GenericName,Quantity,Price,PaymentStatus,OrderDate,OrderStatus) VALUES (?,?,?,?,?,?,?,?,?)";
+                
+                //prepare statement with mysqli procedural
+                $stmt = mysqli_prepare($conn,$sql);
+                //bind param with statement
+                mysqli_stmt_bind_param($stmt,"isssiisss",$orderID,$username,$medicineName,$genename,$quantity,$orderPrice,$ispaid,$time,$orderStatus);
 
-                $stmt = $conn->prepare($sql);
+                //execute statement
+                mysqli_stmt_execute($stmt);
 
-                $stmt->bind_param("isssiisss",$orderID,$username,$medicineName,$genename,$quantity,$orderPrice,$ispaid,$time,$orderStatus);
+                //close statement
+                mysqli_stmt_close($stmt);
 
-                $stmt->execute();
-
-                $stmt->close();
-
-                $conn->close();
+                //close connection
+                mysqli_close($conn);
    
                 header("refresh:5;url=../View/patient-profile.php");
                 

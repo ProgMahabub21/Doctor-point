@@ -2,7 +2,7 @@
     <?php
     session_start();
     require 'dbconn.php';
-    if (isset($_POST['patient'])) {
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $patient_fname = $_POST['fname'];
         $patient_lname = $_POST['lname'];
         $patient_age = $_POST['age'];
@@ -15,7 +15,7 @@
         $patient_email = $_POST['email'];
 
 
-      //  echo $patient_fname. "// ". $patient_lname. " //" .$patient_age." //". $patient_address ." //". $patient_bloodGroup." //". $patient_phone." //". $patient_password." //". $patient_gender."//".$patient_email; 
+       // echo $patient_fname. "// ". $patient_lname. " //" .$patient_age." //". $patient_address ." //". $patient_bloodGroup." //". $patient_phone." //". $patient_password." //". $patient_gender."//".$patient_email; 
 
         if (
             empty($patient_fname) || empty($patient_lname) || empty($patient_age) || empty($patient_bloodGroup)
@@ -41,21 +41,25 @@
 
         } else {
             //sql to select query with bind param
-            $sql1= "SELECT Email FROM patient_data";
+            $sql1= "SELECT Email FROM patient_data where Email=?";
 
-            $result = mysqli_query($conn, $sql1);
-            $row = mysqli_fetch_assoc($result);
-        
-            if(mysqli_num_rows($result) > 0)
-            {
-               $extemail = $row["Email"];
-               if($extemail == $patient_email)
-               {
-                //    echo "Email already exists\n";
-                   echo json_encode(array('statusCode' =>803));
-                   header("Location: ../View/patient-form.php");
-               }                
-            }
+            //prepare statement with mysqli procedural
+            $stmt1 = mysqli_prepare($conn, $sql1);
+
+            //bind param
+            mysqli_stmt_bind_param($stmt1, "s", $patient_email);
+
+            //execute query
+            mysqli_stmt_execute($stmt1);
+
+            //get result
+            $result1 = mysqli_stmt_get_result($stmt1);
+
+            //check if email already exists
+            if (mysqli_num_rows($result1) > 0) {
+                echo json_encode(array('statusCode' => 803));
+                header("refresh:10;url=../View/patient-form.php");
+            } 
             if($conn)
             {
                 //sql insert query with prepare statement with bind params
@@ -85,7 +89,7 @@
                     header("refresh:3;url=../View/login-form.php");
                 } else {
                     echo json_encode(array("statusCode"=>401));
-                    echo "error";
+                   // echo "error";
                     //close connection
                     mysqli_close($conn);
                     header("refresh:10;url=../View/patient-form.php");

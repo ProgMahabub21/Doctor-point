@@ -16,8 +16,7 @@
     }
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // $patient_fname = $_POST['fname'];
-        // $patient_lname = $_POST['lname'];
+
         $patient_age = $_POST['age'];
         $patient_address = $_POST['address'];
         $patient_bloodGroup = $_POST['bgs'];
@@ -34,17 +33,27 @@
             // values($patient_age,$patient_address,$patient_phone,$patient_gender,$patient_bloodGroup) WHERE Email = $curr_user";
            // echo $curr_user;
            //echo $patient_bloodGroup."++".$patient_age."++". $patient_gender."++". $patient_phone;
+
+
+           //sql update query with bind param
+
+
             $sql = "UPDATE patient_data SET Age='$patient_age',Present_Address='$patient_address',Phone='$patient_phone',Gender='$patient_gender',
-            BloodGroup='$patient_bloodGroup' WHERE Email= '$curr_user'";
-            $result = mysqli_query($conn, $sql);
-            if($result > 0)
-            {
-                // echo "update successful ";
-                echo json_encode(array('statusCode'=>200));
+            BloodGroup='$patient_bloodGroup' WHERE Email= ?";
+
+            //prepare statement
+            if ($stmt = mysqli_prepare($conn, $sql)) {
+                mysqli_stmt_bind_param($stmt, "s", $curr_user);
             }
-            else
-                // echo "update failed";
-                echo json_encode(array('statusCode'=>400));
+            if (mysqli_stmt_execute($stmt))
+            {
+                //check if data is inserted
+                if (mysqli_affected_rows($conn) > 0) {
+                    echo json_encode(array('statusCode'=>200));
+                } else {
+                    echo json_encode(array('statusCode'=>400));
+                }
+            }
         }
         // echo "update successful ";
         // $userData = json_decode(file_get_contents("../Model/patientData.json", true), true);
